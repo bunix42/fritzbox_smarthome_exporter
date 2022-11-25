@@ -155,11 +155,11 @@ func (fc *fritzCollector) Collect(ch chan<- prometheus.Metric) {
 			}
 		}
 
-		if dev.CanMeasureHumidity() {
+		/*if dev.CanMeasureHumidity() {
 			if err := mustStringToFloatMetric(ch, fc.Humidity, dev.Humidity.FmtRelativeHumidity(), &dev); err != nil {
 				log.Printf("Unable to parse humidity data of \"%s\" : %v\n", dev.Name, err)
 			}
-		}
+		}*/
 
 		if dev.IsBatteryPowered() {
 			if err := mustStringToFloatMetric(ch, fc.BatteryChargeLevel, dev.BatteryChargeLevel, &dev); err != nil {
